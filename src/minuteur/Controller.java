@@ -13,10 +13,11 @@ public class Controller implements ActionListener {
 		view=v;
 		minuteur=m;
 		minuteur.addObserver(v);
+		view.buttonPlus.addActionListener(this);
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent evt) {
-		view.buttonPlus.addActionListener(this);
 		Object source = evt.getSource();
 		if (source == view.buttonMoins)
 		{
