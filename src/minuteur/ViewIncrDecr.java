@@ -18,7 +18,7 @@ public class ViewIncrDecr extends View{
 			frame = new JFrame();
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	        JPanel panel = new JPanel();
+	        panel = new JPanel();
 	        panel.setLayout(null);
 	        panel.setPreferredSize(new Dimension(240, 100));
 
@@ -26,6 +26,7 @@ public class ViewIncrDecr extends View{
 
 	        output.setSize(100, 30);
 	        output.setLocation(10, 10);
+	        output.setText(String.valueOf(0));
 	        panel.add(output);
 	        
 	        buttonPlus.setSize(100, 30);

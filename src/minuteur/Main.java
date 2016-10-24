@@ -8,6 +8,7 @@ public class Main {
         ViewIncrDecr view = new ViewIncrDecr();
         @SuppressWarnings("unused")
 		Controller controller = new Controller(view, minuteur);
-        view.frame.setName("Heures");
+        view.frame.setTitle("Heures");
+        view.frame.setLocation(200, 300);
 	}
 }
