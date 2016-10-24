@@ -6,6 +6,8 @@ public class Main {
 	{		
 		Minuteur minuteur = new Minuteur();
         ViewIncrDecr view = new ViewIncrDecr();
-        Controller controller = new Controller(view, minuteur);
+        @SuppressWarnings("unused")
+		Controller controller = new Controller(view, minuteur);
+        view.frame.setName("Heures");
 	}
 }

@@ -14,6 +14,7 @@ public class Controller implements ActionListener {
 		minuteur=m;
 		minuteur.addObserver(v);
 		view.buttonPlus.addActionListener(this);
+		view.buttonMoins.addActionListener(this);
 	}
 	
 	@Override
