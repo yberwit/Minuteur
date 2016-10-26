@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 import javax.swing.plaf.SliderUI;
 
-public class Main {
+public class Main{
+
 
 	public static void main(String args[]) throws InterruptedException {
 		@SuppressWarnings("unused")
@@ -42,12 +43,8 @@ public class Main {
 		Views.add(hminsec);
 		@SuppressWarnings("unused")
 		Controller controller = new Controller(Views, minuteur);
-		while(true)
-		{
-			Thread.sleep(1000);
-			minuteur.incrSeconde();
-			
-		}
 
+		 (new TicTac(minuteur)).start();
+		
 	}
 }

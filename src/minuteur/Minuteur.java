@@ -70,6 +70,8 @@ public class Minuteur extends Observable {
 		if (dataHeure != 0) {
 			dataHeure--;
 		}
+		else
+			setDataHeure(23);
 		this.setChanged();
 		this.notifyObservers();
 	}
@@ -78,6 +80,10 @@ public class Minuteur extends Observable {
 		if (dataMinute != 0) {
 			dataMinute--;
 		}
+		else{
+			setDataMinute(59);
+			decrHeure();
+		}
 		this.setChanged();
 		this.notifyObservers();
 	}
@@ -85,6 +91,10 @@ public class Minuteur extends Observable {
 	public void decrSeconde() {
 		if (dataSeconde != 0) {
 			dataSeconde--;
+		}
+		else{
+			setDataSeconde(59);
+			decrMinute();
 		}
 		this.setChanged();
 		this.notifyObservers();
