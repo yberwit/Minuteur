@@ -23,7 +23,7 @@ public class ViewClassique extends View {
 		output.setSize(100, 30);
 		output.setLocation(10, 10);
 
-		output.setText(String.valueOf(0));
+	
 		panel.add(output);
 
 		frame.pack();

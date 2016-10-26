@@ -1,5 +1,6 @@
 package minuteur;
 
+import java.time.LocalDateTime;
 import java.util.Observable;
 
 public class Minuteur extends Observable {
@@ -11,9 +12,9 @@ public class Minuteur extends Observable {
 	public int MAX_MINSEC = 60;
 
 	public Minuteur() {
-		this.dataMinute = 0;
-		this.dataHeure = 0;
-		this.dataSeconde = 0;
+		this.dataHeure = LocalDateTime.now().getHour();
+		this.dataMinute = LocalDateTime.now().getMinute();
+		this.dataSeconde = LocalDateTime.now().getSecond();
 	}
 
 	public int getDataMinute() {
@@ -50,6 +51,8 @@ public class Minuteur extends Observable {
 	public void incrMinute() {
 
 		dataMinute = (dataMinute + 1) % MAX_MINSEC;
+		if (dataMinute == 0)
+			incrHeure();
 		this.setChanged();
 		this.notifyObservers();
 	}
@@ -57,6 +60,8 @@ public class Minuteur extends Observable {
 	public void incrSeconde() {
 
 		dataSeconde = (dataSeconde + 1) % MAX_MINSEC;
+		if (dataSeconde == 0)
+			incrMinute();
 		this.setChanged();
 		this.notifyObservers();
 	}
